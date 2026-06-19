@@ -72,6 +72,7 @@ function Index() {
         <div className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest">
           <a href="#menu" className="hover:text-secondary transition-colors">Menu</a>
           <a href="#story" className="hover:text-secondary transition-colors">Our Story</a>
+          <a href="#reviews" className="hover:text-secondary transition-colors">Reviews</a>
           <a href="#hire" className="hover:text-secondary transition-colors">Hire Us</a>
         </div>
         <a
