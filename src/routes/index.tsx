@@ -191,6 +191,79 @@ function Index() {
         </div>
       </section>
 
+      {/* Reviews */}
+      <section id="reviews" className="px-6 py-24 bg-muted">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+              <h2 className="font-display text-5xl md:text-7xl uppercase text-secondary mb-4">What People Say</h2>
+              <p className="font-mono text-sm text-accent uppercase">
+                5.0 ★ on Google &bull; Read our latest reviews
+              </p>
+            </div>
+            <a
+              href="https://www.google.com/search?q=Mr+Savino+Icecream+Slough"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold uppercase tracking-widest text-secondary hover:text-accent transition-colors"
+            >
+              See All on Google →
+            </a>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Mubashir Arif",
+                date: "3 months ago",
+                text: "Very tasty ice cream! Excellent Service.",
+                badge: null,
+              },
+              {
+                name: "first last",
+                date: "2 weeks ago",
+                text: "this is absolutely the best ice cream ive had, clean van, looks fresh and cleanliness is amazing which is what we don't see these days! i'll be on the lookout for more ice cream from you guys",
+                badge: "Local Guide · 14 reviews",
+              },
+              {
+                name: "Hayder Abbas",
+                date: "2 weeks ago",
+                text: "Hands down some of the best ice cream in all of London. Quality ingredients, authentic service and a chocolate cake that I cant get enough of!",
+                badge: null,
+              },
+            ].map((review, i) => (
+              <div
+                key={review.name}
+                className="animate-reveal bg-background rounded-2xl p-8 shadow-sm border border-border flex flex-col"
+                style={{ animationDelay: `${300 + i * 100}ms` }}
+              >
+                <div className="flex items-center gap-1 mb-4 text-primary">
+                  {Array.from({ length: 5 }).map((_, j) => (
+                    <svg key={j} className="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-foreground/90 leading-relaxed mb-6 flex-1">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+                <div className="flex items-center justify-between pt-6 border-t border-border">
+                  <div>
+                    <div className="font-bold text-sm uppercase tracking-wide text-secondary">
+                      {review.name}
+                    </div>
+                    {review.badge && (
+                      <div className="text-xs text-muted-foreground mt-0.5">{review.badge}</div>
+                    )}
+                  </div>
+                  <div className="text-xs text-muted-foreground font-mono">{review.date}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Hire */}
       <section id="hire" className="px-6 mb-12">
         <div className="max-w-7xl mx-auto bg-primary rounded-[3rem] p-12 md:p-24 text-center overflow-hidden relative">
