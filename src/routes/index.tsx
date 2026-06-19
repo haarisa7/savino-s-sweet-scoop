@@ -3,7 +3,7 @@ import vanAsset from "@/assets/van.png.asset.json";
 import treatClassic from "@/assets/treat-classic.jpg";
 import treatBerry from "@/assets/treat-berry.jpg";
 import treatHoneycomb from "@/assets/treat-honeycomb.jpg";
-import historyImg from "@/assets/history.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -153,38 +153,26 @@ function Index() {
 
       {/* Story */}
       <section id="story" className="px-6 py-24">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-          <div className="w-full aspect-square bg-stone-200 rounded-3xl overflow-hidden grayscale">
-            <img
-              src={historyImg}
-              alt="The Savino family in front of their first ice cream van"
-              loading="lazy"
-              width={1024}
-              height={1024}
-              className="w-full h-full object-cover"
-            />
+        <div className="max-w-4xl mx-auto">
+          <span className="font-mono text-xs uppercase text-accent font-bold mb-4 block">
+            Our Story
+          </span>
+          <h2 className="font-display text-5xl md:text-6xl uppercase text-secondary mb-8 leading-tight">
+            For the love of ice cream &amp; <span className="text-primary [text-shadow:_2px_2px_0_#005BB5]">hot desserts</span>
+          </h2>
+          <div className="space-y-6 text-foreground/80 leading-relaxed text-lg">
+            <p>
+              Since 1999, the Savino family has been serving premium soft serve and hot desserts to the people of Northwest London — a love letter to the British ice cream van tradition.
+            </p>
+            <p>
+              We use fresh ice cream mix, never powder. Each cone, sundae and shake is one of a kind: indulgent, delicate, and made the moment you order it.
+            </p>
           </div>
-          <div>
-            <span className="font-mono text-xs uppercase text-accent font-bold mb-4 block">
-              Our Story
-            </span>
-            <h2 className="font-display text-5xl md:text-6xl uppercase text-secondary mb-8 leading-tight">
-              For the love of ice cream &amp; <span className="text-primary [text-shadow:_2px_2px_0_#005BB5]">hot desserts</span>
-            </h2>
-            <div className="space-y-6 text-foreground/80 leading-relaxed text-lg">
-              <p>
-                Since 1999, the Savino family has been serving premium soft serve and hot desserts to the people of Northwest London — a love letter to the British ice cream van tradition.
-              </p>
-              <p>
-                We use fresh ice cream mix, never powder. Each cone, sundae and shake is one of a kind: indulgent, delicate, and made the moment you order it.
-              </p>
-            </div>
-            <div className="mt-12 p-8 border-l-4 border-primary bg-primary/5 italic text-secondary">
-              &ldquo;Our products may cause happiness.&rdquo;
-              <footer className="mt-4 font-bold not-italic uppercase tracking-widest text-xs">
-                — The Savino Family
-              </footer>
-            </div>
+          <div className="mt-12 p-8 border-l-4 border-primary bg-primary/5 italic text-secondary">
+            &ldquo;Our products may cause happiness.&rdquo;
+            <footer className="mt-4 font-bold not-italic uppercase tracking-widest text-xs">
+              — The Savino Family
+            </footer>
           </div>
         </div>
       </section>
