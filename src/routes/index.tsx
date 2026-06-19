@@ -1,5 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import vanAsset from "@/assets/van.png.asset.json";
+import treatCone from "@/assets/treat-cone.jpg";
+import treatWaffle from "@/assets/treat-waffle.jpg";
+import treatSundae from "@/assets/treat-sundae.jpg";
+import treatMilkshake from "@/assets/treat-milkshake.jpg";
+import treatHotDough from "@/assets/treat-hot-dough.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,42 +27,31 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const menuCategories = [
+const treats = [
   {
-    title: "Soft Serve Cones",
-    items: [
-      "Single Cone",
-      "Twin Cone",
-      "Single Waffle",
-      "Twin Waffle",
-      "Sprinkles",
-      "Flake",
-      "Nuts",
-    ],
+    name: "Classic Cone",
+    desc: "Proper Mr Whippy with a chocolate flake",
+    img: treatCone,
   },
   {
-    title: "Flavours",
-    items: ["Plain", "Strawberry", "Chocolate", "Mint"],
+    name: "Waffle Cone",
+    desc: "Golden Belgian waffle with sprinkles & flake",
+    img: treatWaffle,
   },
   {
-    title: "Sundaes & Slush",
-    items: ["Boat Sundae", "Mixed Slush"],
+    name: "Boat Sundae",
+    desc: "Soft serve swirls with sauce & toppings",
+    img: treatSundae,
   },
   {
-    title: "Milkshakes",
-    items: [
-      "Vanilla",
-      "Bubblegum",
-      "Caramel",
-      "Oreo",
-      "Lotus Biscoff",
-      "Cookies & Cream",
-      "Hazelnut & Chocolate",
-    ],
+    name: "Milkshakes",
+    desc: "Thick & creamy — Oreo, Biscoff, Caramel & more",
+    img: treatMilkshake,
   },
   {
-    title: "Hot Desserts",
-    items: ["Hot Choc Dough"],
+    name: "Hot Choc Dough",
+    desc: "Warm cookie dough topped with soft serve",
+    img: treatHotDough,
   },
 ];
 
