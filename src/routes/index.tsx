@@ -1,9 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import vanAsset from "@/assets/van.png.asset.json";
-import treatClassic from "@/assets/treat-classic.jpg";
-import treatBerry from "@/assets/treat-berry.jpg";
-import treatHoneycomb from "@/assets/treat-honeycomb.jpg";
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,21 +22,42 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const treats = [
+const menuCategories = [
   {
-    name: "The Classic 99",
-    desc: "Double-swirled vanilla soft serve, crisp Cadbury flake and a drizzle of honey.",
-    img: treatClassic,
+    title: "Soft Serve Cones",
+    items: [
+      "Single Cone",
+      "Twin Cone",
+      "Single Waffle",
+      "Twin Waffle",
+      "Sprinkles",
+      "Flake",
+      "Nuts",
+    ],
   },
   {
-    name: "Berry Jubilee Sundae",
-    desc: "Summer berry coulis folded into fresh cream and served over swirled vanilla.",
-    img: treatBerry,
+    title: "Flavours",
+    items: ["Plain", "Strawberry", "Chocolate", "Mint"],
   },
   {
-    name: "Honeycomb High",
-    desc: "Salted caramel soft serve topped with shattered honeycomb in our signature blue cup.",
-    img: treatHoneycomb,
+    title: "Sundaes & Slush",
+    items: ["Boat Sundae", "Mixed Slush"],
+  },
+  {
+    title: "Milkshakes",
+    items: [
+      "Vanilla",
+      "Bubblegum",
+      "Caramel",
+      "Oreo",
+      "Lotus Biscoff",
+      "Cookies & Cream",
+      "Hazelnut & Chocolate",
+    ],
+  },
+  {
+    title: "Hot Desserts",
+    items: ["Hot Choc Dough"],
   },
 ];
 
