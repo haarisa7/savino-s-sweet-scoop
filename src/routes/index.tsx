@@ -1,9 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import vanAsset from "@/assets/van.png.asset.json";
-import treatClassic from "@/assets/treat-classic.jpg";
-import treatBerry from "@/assets/treat-berry.jpg";
-import treatHoneycomb from "@/assets/treat-honeycomb.jpg";
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -26,21 +22,42 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const treats = [
+const menuCategories = [
   {
-    name: "The Classic 99",
-    desc: "Double-swirled vanilla soft serve, crisp Cadbury flake and a drizzle of honey.",
-    img: treatClassic,
+    title: "Soft Serve Cones",
+    items: [
+      "Single Cone",
+      "Twin Cone",
+      "Single Waffle",
+      "Twin Waffle",
+      "Sprinkles",
+      "Flake",
+      "Nuts",
+    ],
   },
   {
-    name: "Berry Jubilee Sundae",
-    desc: "Summer berry coulis folded into fresh cream and served over swirled vanilla.",
-    img: treatBerry,
+    title: "Flavours",
+    items: ["Plain", "Strawberry", "Chocolate", "Mint"],
   },
   {
-    name: "Honeycomb High",
-    desc: "Salted caramel soft serve topped with shattered honeycomb in our signature blue cup.",
-    img: treatHoneycomb,
+    title: "Sundaes & Slush",
+    items: ["Boat Sundae", "Mixed Slush"],
+  },
+  {
+    title: "Milkshakes",
+    items: [
+      "Vanilla",
+      "Bubblegum",
+      "Caramel",
+      "Oreo",
+      "Lotus Biscoff",
+      "Cookies & Cream",
+      "Hazelnut & Chocolate",
+    ],
+  },
+  {
+    title: "Hot Desserts",
+    items: ["Hot Choc Dough"],
   },
 ];
 
@@ -116,35 +133,32 @@ function Index() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
-              <h2 className="font-display text-5xl md:text-7xl uppercase mb-4">Signature Swirls</h2>
+              <h2 className="font-display text-5xl md:text-7xl uppercase mb-4">Our Menu</h2>
               <p className="font-mono text-sm text-primary uppercase">
-                Hand-crafted &bull; Triple-whipped &bull; Local dairy
+                Fresh from the van &bull; Daily 12pm &ndash; 7pm
               </p>
             </div>
             <p className="text-sm text-secondary-foreground/70 max-w-xs">
-              Soft serve, sundaes, milkshakes & hot desserts — served fresh from the van every day, 12pm to 7pm.
+              Soft serve, sundaes, milkshakes &amp; hot desserts &mdash; served fresh from the van every day.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {treats.map((t, i) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {menuCategories.map((cat, i) => (
               <div
-                key={t.name}
-                className="group animate-reveal"
+                key={cat.title}
+                className="group animate-reveal bg-secondary-foreground/5 border border-secondary-foreground/10 rounded-2xl p-8 hover:bg-secondary-foreground/10 transition-colors"
                 style={{ animationDelay: `${300 + i * 100}ms` }}
               >
-                <div className="w-full aspect-[4/5] bg-white/10 rounded-2xl mb-6 overflow-hidden">
-                  <img
-                    src={t.img}
-                    alt={t.name}
-                    loading="lazy"
-                    width={800}
-                    height={1000}
-                    className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                  />
-                </div>
-                <h3 className="font-display text-3xl uppercase mb-2">{t.name}</h3>
-                <p className="text-sm text-secondary-foreground/70">{t.desc}</p>
+                <h3 className="font-display text-2xl uppercase mb-4 text-primary">{cat.title}</h3>
+                <ul className="space-y-2">
+                  {cat.items.map((item) => (
+                    <li key={item} className="text-sm text-secondary-foreground/80 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
