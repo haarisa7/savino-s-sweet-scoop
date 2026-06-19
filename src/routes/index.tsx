@@ -139,21 +139,26 @@ function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {menuCategories.map((cat, i) => (
+            {treats.map((treat, i) => (
               <div
-                key={cat.title}
-                className="group animate-reveal bg-secondary-foreground/5 border border-secondary-foreground/10 rounded-2xl p-8 hover:bg-secondary-foreground/10 transition-colors"
+                key={treat.name}
+                className="group animate-reveal bg-secondary-foreground/5 border border-secondary-foreground/10 rounded-2xl overflow-hidden hover:bg-secondary-foreground/10 transition-colors"
                 style={{ animationDelay: `${300 + i * 100}ms` }}
               >
-                <h3 className="font-display text-2xl uppercase mb-4 text-primary">{cat.title}</h3>
-                <ul className="space-y-2">
-                  {cat.items.map((item) => (
-                    <li key={item} className="text-sm text-secondary-foreground/80 flex items-center gap-2">
-                      <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={treat.img}
+                    alt={treat.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                    width={1024}
+                    height={1024}
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display text-2xl uppercase mb-2 text-primary">{treat.name}</h3>
+                  <p className="text-sm text-secondary-foreground/70">{treat.desc}</p>
+                </div>
               </div>
             ))}
           </div>
