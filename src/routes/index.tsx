@@ -68,6 +68,7 @@ function Index() {
           <a href="#story" className="hover:text-secondary transition-colors">Our Story</a>
           <a href="#reviews" className="hover:text-secondary transition-colors">Reviews</a>
           <a href="#hire" className="hover:text-secondary transition-colors">Hire Us</a>
+          <a href="#contact" className="hover:text-secondary transition-colors">Contact</a>
         </div>
         <a
           href="https://wa.me/447399841111"
@@ -202,7 +203,7 @@ function Index() {
               </p>
             </div>
             <a
-              href="https://www.google.com/search?q=Mr+Savino+Icecream+Slough"
+              href="https://www.google.com/maps/search/?api=1&query=Mr+Savino+Icecream+207+Stoke+Rd+Slough+SL2+5AX"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-semibold uppercase tracking-widest text-secondary hover:text-accent transition-colors"
@@ -288,6 +289,98 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Contact */}
+      <section id="contact" className="px-6 py-24 bg-muted">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="font-mono text-xs uppercase text-accent font-bold mb-4 block">
+              Get in Touch
+            </span>
+            <h2 className="font-display text-5xl md:text-6xl uppercase text-secondary mb-4 leading-tight">
+              Send Us a Message
+            </h2>
+            <p className="text-foreground/70 max-w-xl mx-auto">
+              Questions, event bookings, or just want to say hi? Drop us a line and we&rsquo;ll get back to you.
+            </p>
+          </div>
+
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              const form = e.currentTarget as HTMLFormElement;
+              const data = new FormData(form);
+              const name = String(data.get("name") || "").trim();
+              const email = String(data.get("email") || "").trim();
+              const message = String(data.get("message") || "").trim();
+              if (!name || !email || !message) return;
+              const subject = encodeURIComponent(`Website enquiry from ${name}`);
+              const body = encodeURIComponent(
+                `${message}\n\n— ${name}\nReply to: ${email}`,
+              );
+              window.location.href = `mailto:savinosofticeream@gmail.com?subject=${subject}&body=${body}`;
+            }}
+            className="bg-background rounded-3xl p-8 md:p-12 shadow-sm border border-border space-y-6"
+          >
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="name" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
+                  Your Name
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  maxLength={100}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
+                />
+              </div>
+              <div>
+                <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  maxLength={255}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="message" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                maxLength={1000}
+                rows={5}
+                className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition resize-none"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between pt-2">
+              <p className="text-xs text-muted-foreground">
+                Or WhatsApp us on{" "}
+                <a href="https://wa.me/447399841111" className="text-secondary font-semibold hover:text-primary">
+                  07399 841111
+                </a>
+              </p>
+              <button
+                type="submit"
+                className="w-full sm:w-auto bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-bold uppercase tracking-widest hover:ring-4 ring-primary/30 transition-all shadow-lg"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
 
       {/* Footer */}
       <footer className="bg-foreground text-background py-20 px-6">
