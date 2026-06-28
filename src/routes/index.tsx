@@ -292,7 +292,7 @@ function Index() {
 
       {/* Contact */}
       <section id="contact" className="px-6 py-24 bg-muted">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <span className="font-mono text-xs uppercase text-accent font-bold mb-4 block">
               Get in Touch
@@ -311,12 +311,13 @@ function Index() {
               const form = e.currentTarget as HTMLFormElement;
               const data = new FormData(form);
               const name = String(data.get("name") || "").trim();
+              const phone = String(data.get("phone") || "").trim();
               const email = String(data.get("email") || "").trim();
               const message = String(data.get("message") || "").trim();
               if (!name || !email || !message) return;
               const subject = encodeURIComponent(`Website enquiry from ${name}`);
               const body = encodeURIComponent(
-                `${message}\n\n— ${name}\nReply to: ${email}`,
+                `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`,
               );
               window.location.href = `mailto:savinosofticeream@gmail.com?subject=${subject}&body=${body}`;
             }}
@@ -337,18 +338,31 @@ function Index() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
-                  Email
+                <label htmlFor="phone" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
+                  Phone
                 </label>
                 <input
-                  id="email"
-                  name="email"
-                  type="email"
+                  id="phone"
+                  name="phone"
+                  type="tel"
                   required
-                  maxLength={255}
+                  maxLength={30}
                   className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
                 />
               </div>
+            </div>
+            <div>
+              <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
+                Email
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                maxLength={255}
+                className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
+              />
             </div>
             <div>
               <label htmlFor="message" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
@@ -363,23 +377,53 @@ function Index() {
                 className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition resize-none"
               />
             </div>
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between pt-2">
-              <p className="text-xs text-muted-foreground">
-                Or WhatsApp us on{" "}
-                <a href="https://wa.me/447399841111" className="text-secondary font-semibold hover:text-primary">
-                  07399 841111
-                </a>
-              </p>
-              <button
-                type="submit"
-                className="w-full sm:w-auto bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-bold uppercase tracking-widest hover:ring-4 ring-primary/30 transition-all shadow-lg"
-              >
-                Send Message
-              </button>
-            </div>
+            <button
+              type="submit"
+              className="w-full bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-bold uppercase tracking-widest hover:ring-4 ring-primary/30 transition-all shadow-lg"
+            >
+              Send Message
+            </button>
           </form>
+
+          {/* Contact details */}
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            <a
+              href="tel:07399841111"
+              className="flex items-start gap-4 rounded-2xl border border-border bg-background p-6 hover:border-primary transition-colors"
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Phone</p>
+                <p className="text-base font-semibold text-secondary">07399 841111</p>
+              </div>
+            </a>
+            <a
+              href="mailto:savinosofticeream@gmail.com"
+              className="flex items-start gap-4 rounded-2xl border border-border bg-background p-6 hover:border-primary transition-colors"
+            >
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div className="min-w-0">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Email</p>
+                <p className="text-sm font-semibold text-secondary truncate">savinosofticeream@gmail.com</p>
+              </div>
+            </a>
+            <div className="flex items-start gap-4 rounded-2xl border border-border bg-background p-6">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Location</p>
+                <p className="text-base font-semibold text-secondary">Northwest London</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
 
 
       {/* Footer */}
