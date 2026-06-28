@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import vanAsset from "@/assets/van.png.asset.json";
+import vanImage from "@/assets/van.png";
 import treatCone from "@/assets/treat-cone.jpg";
 import treatWaffle from "@/assets/treat-waffle.jpg";
 import treatSundae from "@/assets/treat-sundae.jpg";
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
         content:
           "Premium soft serve, sundaes, shakes & hot desserts from London's favourite family ice cream van. Available daily and for private hire.",
       },
-      { property: "og:image", content: vanAsset.url },
+      { property: "og:image", content: vanImage },
     ],
   }),
   component: Index,
@@ -49,7 +49,7 @@ const treats = [
     img: treatMilkshake,
   },
   {
-    name: "Hot Choc Dough",
+    name: "Hot Desserts",
     desc: "Warm cookie dough topped with soft serve",
     img: treatHotDough,
   },
@@ -108,7 +108,7 @@ function Index() {
           <div className="relative animate-reveal [animation-delay:200ms]">
             <div className="w-full aspect-square bg-white rounded-[2rem] shadow-2xl overflow-hidden ring-1 ring-black/5">
               <img
-                src={vanAsset.url}
+                src={vanImage}
                 alt="Savino's Mr Whippy ice cream van"
                 className="w-full h-full object-cover"
                 width={1200}
