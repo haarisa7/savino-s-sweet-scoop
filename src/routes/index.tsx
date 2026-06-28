@@ -98,7 +98,7 @@ function Index() {
                 View Menu
               </a>
               <a
-                href="#hire"
+                href="#contact"
                 className="border-2 border-secondary text-secondary px-8 py-4 rounded-xl font-bold uppercase tracking-wider hover:bg-secondary hover:text-secondary-foreground transition-all"
               >
                 Book for Events
