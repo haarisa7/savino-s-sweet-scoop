@@ -67,8 +67,7 @@ function Index() {
           <a href="#menu" className="hover:text-secondary transition-colors">Menu</a>
           <a href="#story" className="hover:text-secondary transition-colors">Our Story</a>
           <a href="#reviews" className="hover:text-secondary transition-colors">Reviews</a>
-          <a href="#hire" className="hover:text-secondary transition-colors">Hire Us</a>
-          <a href="#contact" className="hover:text-secondary transition-colors">Contact</a>
+          <a href="#contact" className="hover:text-secondary transition-colors">Hire Us</a>
         </div>
         <a
           href="https://wa.me/447399841111"
