@@ -202,7 +202,7 @@ function Index() {
               </p>
             </div>
             <a
-              href="https://www.google.com/search?q=Mr+Savino+Icecream+Slough"
+              href="https://www.google.com/maps/search/?api=1&query=Mr+Savino+Icecream+207+Stoke+Rd+Slough+SL2+5AX"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-semibold uppercase tracking-widest text-secondary hover:text-accent transition-colors"
