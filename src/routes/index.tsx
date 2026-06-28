@@ -264,37 +264,18 @@ function Index() {
         </div>
       </section>
 
-      {/* Hire */}
-      <section id="hire" className="px-6 mb-12">
-        <div className="max-w-7xl mx-auto bg-primary rounded-[3rem] p-12 md:p-24 text-center overflow-hidden relative">
-          <div className="relative z-10">
-            <h2 className="font-display text-5xl md:text-8xl uppercase text-secondary mb-8 leading-[0.9]">
-              Book the Chime
-            </h2>
-            <p className="text-lg md:text-2xl text-secondary/80 max-w-2xl mx-auto font-medium">
-              Weddings, festivals, school fairs, corporate days — make it unforgettable with a private visit from Savino&rsquo;s. Drop us a message below to check availability.
-            </p>
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
-            <div className="font-display text-[25vw] uppercase text-secondary leading-none">
-              SAVINO
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
+      {/* Contact / Hire */}
       <section id="contact" className="px-6 py-24 bg-muted">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <span className="font-mono text-xs uppercase text-accent font-bold mb-4 block">
-              Get in Touch
+              Weddings, Festivals &amp; Events
             </span>
-            <h2 className="font-display text-5xl md:text-6xl uppercase text-secondary mb-4 leading-tight">
-              Send Us a Message
+            <h2 className="font-display text-5xl md:text-7xl uppercase text-secondary mb-4 leading-tight">
+              Book the Chime
             </h2>
             <p className="text-foreground/70 max-w-xl mx-auto">
-              Questions, event bookings, or just want to say hi? Drop us a line and we&rsquo;ll get back to you.
+              Make your event unforgettable with a private visit from Savino&rsquo;s. Drop us a message and we&rsquo;ll check availability.
             </p>
           </div>
 
