@@ -272,15 +272,9 @@ function Index() {
             <h2 className="font-display text-5xl md:text-8xl uppercase text-secondary mb-8 leading-[0.9]">
               Book the Chime
             </h2>
-            <p className="text-lg md:text-2xl text-secondary/80 max-w-2xl mx-auto mb-12 font-medium">
-              Weddings, festivals, school fairs, corporate days — make it unforgettable with a private visit from Savino&rsquo;s.
+            <p className="text-lg md:text-2xl text-secondary/80 max-w-2xl mx-auto font-medium">
+              Weddings, festivals, school fairs, corporate days — make it unforgettable with a private visit from Savino&rsquo;s. Drop us a message below to check availability.
             </p>
-            <a
-              href="mailto:savinosofticeream@gmail.com"
-              className="inline-block bg-secondary text-secondary-foreground px-12 py-6 rounded-2xl font-bold uppercase tracking-widest hover:scale-105 transition-transform shadow-xl"
-            >
-              Check Availability
-            </a>
           </div>
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
             <div className="font-display text-[25vw] uppercase text-secondary leading-none">
