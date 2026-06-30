@@ -230,7 +230,7 @@ function Index() {
       </section>
 
       {/* Reviews */}
-      <section id="reviews" className="px-6 py-24 bg-muted">
+      <section id="reviews" className="px-6 pt-24 pb-12 bg-muted">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <div>
@@ -303,7 +303,7 @@ function Index() {
       </section>
 
       {/* Contact / Hire */}
-      <section id="contact" className="px-6 py-24 bg-muted">
+      <section id="contact" className="px-6 pt-12 pb-24 bg-muted">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="font-mono text-xs uppercase text-accent font-bold mb-4 block">
