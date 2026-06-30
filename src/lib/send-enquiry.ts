@@ -73,7 +73,7 @@ export const sendEnquiry = createServerFn({ method: "POST" })
     const resend = new Resend(apiKey);
     const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || "Savino's Website <onboarding@resend.dev>",
-      to: [process.env.CONTACT_TO_EMAIL || "savinosofticeream@gmail.com"],
+      to: [process.env.CONTACT_TO_EMAIL || "savinosofticecream@gmail.com"],
       replyTo: data.email,
       subject: `New booking enquiry from ${data.name}`,
       html: renderEmailHtml(data),

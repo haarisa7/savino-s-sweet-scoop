@@ -97,7 +97,7 @@ function openMailtoFallback(data: EnquiryFields) {
     "Sent from the booking form on savinosofticecream.com",
   ];
   const body = encodeURIComponent(lines.join("\n"));
-  window.location.href = `mailto:savinosofticeream@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:savinosofticecream@gmail.com?subject=${subject}&body=${body}`;
 }
 
 function Index() {
@@ -482,7 +482,7 @@ function Index() {
               </div>
             </a>
             <a
-              href="mailto:savinosofticeream@gmail.com"
+              href="mailto:savinosofticecream@gmail.com"
               className="flex items-start gap-4 rounded-2xl border border-border bg-background p-6 hover:border-primary transition-colors"
             >
               <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
@@ -490,7 +490,7 @@ function Index() {
               </div>
               <div className="min-w-0">
                 <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Email</p>
-                <p className="text-sm font-semibold text-secondary break-all">savinosofticeream@gmail.com</p>
+                <p className="text-sm font-semibold text-secondary break-all">savinosofticecream@gmail.com</p>
               </div>
             </a>
             <div className="flex items-start gap-4 rounded-2xl border border-border bg-background p-6">
@@ -537,8 +537,8 @@ function Index() {
               Contact
             </h4>
             <p className="text-sm mb-3">
-              <a href="mailto:savinosofticeream@gmail.com" className="hover:text-primary">
-                savinosofticeream@gmail.com
+              <a href="mailto:savinosofticecream@gmail.com" className="hover:text-primary">
+                savinosofticecream@gmail.com
               </a>
             </p>
             <p className="text-sm">
