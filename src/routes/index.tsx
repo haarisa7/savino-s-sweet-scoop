@@ -3,6 +3,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { sendEnquiry } from "@/lib/send-enquiry";
 import { GUEST_LABELS } from "@/lib/guest-labels";
+import { enquirySchema, type EnquiryFields } from "@/lib/enquiry-schema";
 import vanImage from "@/assets/van.png";
 import treatCone from "@/assets/treat-cone.jpg";
 import treatWaffle from "@/assets/treat-waffle.jpg";
@@ -64,16 +65,6 @@ const treats = [
     img: treatSlush,
   },
 ];
-
-type EnquiryFields = {
-  name: string;
-  phone: string;
-  email: string;
-  eventDate: string;
-  guests: string;
-  location: string;
-  message: string;
-};
 
 function openMailtoFallback(data: EnquiryFields) {
   const subject = encodeURIComponent(`Booking enquiry from ${data.name}`);
@@ -340,7 +331,13 @@ function Index() {
               const message = String(data.get("message") || "").trim();
               if (!name || !email || !message) return;
 
-              const fields: EnquiryFields = { name, phone, email, eventDate, guests, location, message };
+              const fieldsRaw = { name, phone, email, eventDate, guests, location, message };
+              const validated = enquirySchema.safeParse(fieldsRaw);
+              if (!validated.success) {
+                toast.error(validated.error.issues[0]?.message || "Please check the form for errors.");
+                return;
+              }
+              const fields: EnquiryFields = validated.data;
 
               setSubmitting(true);
               try {
@@ -379,8 +376,15 @@ function Index() {
                   id="phone"
                   name="phone"
                   type="tel"
+                  inputMode="tel"
                   required
                   maxLength={30}
+                  pattern="[0-9+\-\s()]*"
+                  title="Digits only (you can use +, -, spaces and brackets)"
+                  onInput={(e) => {
+                    const input = e.currentTarget;
+                    input.value = input.value.replace(/[^0-9+\-\s()]/g, "");
+                  }}
                   className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
                 />
               </div>
@@ -396,6 +400,8 @@ function Index() {
                   type="email"
                   required
                   maxLength={255}
+                  pattern="[^\s@]+@[^\s@]+\.[^\s@]+"
+                  title="Enter a full email address, e.g. name@example.com"
                   className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
                 />
               </div>

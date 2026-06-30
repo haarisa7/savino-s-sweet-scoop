@@ -1,17 +1,8 @@
 import { createServerFn } from "@tanstack/react-start";
 import { Resend } from "resend";
-import { z } from "zod";
+import type { z } from "zod";
 import { GUEST_LABELS } from "./guest-labels";
-
-const enquirySchema = z.object({
-  name: z.string().trim().min(1).max(100),
-  phone: z.string().trim().max(30).default(""),
-  email: z.string().trim().email().max(255),
-  eventDate: z.string().trim().max(20).default(""),
-  guests: z.string().trim().max(20).default(""),
-  location: z.string().trim().max(200).default(""),
-  message: z.string().trim().min(1).max(1000),
-});
+import { enquirySchema } from "./enquiry-schema";
 
 function escapeHtml(value: string) {
   return value
