@@ -5,6 +5,7 @@ import treatWaffle from "@/assets/treat-waffle.jpg";
 import treatSundae from "@/assets/treat-sundae.jpg";
 import treatMilkshake from "@/assets/treat-milkshake.jpg";
 import treatHotDough from "@/assets/treat-hot-dough.jpg";
+import treatSlush from "@/assets/treat-slush.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -52,6 +53,11 @@ const treats = [
     name: "Hot Desserts",
     desc: "Warm waffles, brownies & cookie dough, topped with soft serve",
     img: treatHotDough,
+  },
+  {
+    name: "Slush Puppy",
+    desc: "Iced blue & red slush — sweet, sharp & refreshing",
+    img: treatSlush,
   },
 ];
 
