@@ -303,16 +303,16 @@ function Index() {
       </section>
 
       {/* Contact / Hire */}
-      <section id="contact" className="px-6 pt-12 pb-24 bg-muted">
+      <section id="contact" className="px-6 pt-12 pb-24 bg-secondary">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <span className="font-mono text-xs uppercase text-accent font-bold mb-4 block">
+            <span className="font-mono text-xs uppercase text-primary font-bold mb-4 block">
               Weddings, Festivals &amp; Events
             </span>
-            <h2 className="font-display text-5xl md:text-7xl uppercase text-secondary mb-4 leading-tight">
+            <h2 className="font-display text-5xl md:text-7xl uppercase text-secondary-foreground mb-4 leading-tight">
               Book the Chime
             </h2>
-            <p className="text-foreground/70 max-w-xl mx-auto">
+            <p className="text-secondary-foreground/80 max-w-xl mx-auto">
               Make your event unforgettable with a private visit from Savino&rsquo;s. Drop us a message and we&rsquo;ll check availability.
             </p>
           </div>
