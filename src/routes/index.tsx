@@ -1,4 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { toast } from "sonner";
+import { sendEnquiry } from "@/lib/send-enquiry";
+import { GUEST_LABELS } from "@/lib/guest-labels";
 import vanImage from "@/assets/van.png";
 import treatCone from "@/assets/treat-cone.jpg";
 import treatWaffle from "@/assets/treat-waffle.jpg";
@@ -61,7 +65,44 @@ const treats = [
   },
 ];
 
+type EnquiryFields = {
+  name: string;
+  phone: string;
+  email: string;
+  eventDate: string;
+  guests: string;
+  location: string;
+  message: string;
+};
+
+function openMailtoFallback(data: EnquiryFields) {
+  const subject = encodeURIComponent(`Booking enquiry from ${data.name}`);
+  const lines = [
+    "SAVINO'S SOFT ICE CREAM — BOOKING ENQUIRY",
+    "",
+    "CONTACT",
+    `  Name:      ${data.name}`,
+    `  Phone:     ${data.phone || "—"}`,
+    `  Email:     ${data.email}`,
+    "",
+    "EVENT DETAILS",
+    `  Date:      ${data.eventDate || "Not specified"}`,
+    `  Guests:    ${(data.guests && GUEST_LABELS[data.guests]) || "Not specified"}`,
+    `  Location:  ${data.location || "Not specified"}`,
+    "",
+    "MESSAGE",
+    `  ${data.message}`,
+    "",
+    "—",
+    "Sent from the booking form on savinosofticecream.com",
+  ];
+  const body = encodeURIComponent(lines.join("\n"));
+  window.location.href = `mailto:savinosofticeream@gmail.com?subject=${subject}&body=${body}`;
+}
+
 function Index() {
+  const [submitting, setSubmitting] = useState(false);
+
   return (
     <div className="min-h-screen font-body text-foreground selection:bg-primary selection:text-secondary">
       {/* Nav */}
@@ -286,7 +327,7 @@ function Index() {
           </div>
 
           <form
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault();
               const form = e.currentTarget as HTMLFormElement;
               const data = new FormData(form);
@@ -298,11 +339,21 @@ function Index() {
               const location = String(data.get("location") || "").trim();
               const message = String(data.get("message") || "").trim();
               if (!name || !email || !message) return;
-              const subject = encodeURIComponent(`Website enquiry from ${name}`);
-              const body = encodeURIComponent(
-                `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nEvent Date: ${eventDate}\nNumber of Guests: ${guests}\nLocation: ${location}\n\nMessage:\n${message}`,
-              );
-              window.location.href = `mailto:savinosofticeream@gmail.com?subject=${subject}&body=${body}`;
+
+              const fields: EnquiryFields = { name, phone, email, eventDate, guests, location, message };
+
+              setSubmitting(true);
+              try {
+                await sendEnquiry({ data: fields });
+                toast.success("Enquiry sent! We'll get back to you soon.");
+                form.reset();
+              } catch (error) {
+                console.error(error);
+                toast.error("Couldn't send automatically — opening your email app instead.");
+                openMailtoFallback(fields);
+              } finally {
+                setSubmitting(false);
+              }
             }}
             className="bg-background rounded-3xl p-8 md:p-12 shadow-sm border border-border space-y-6"
           >
@@ -408,10 +459,11 @@ function Index() {
             </div>
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-bold uppercase tracking-widest hover:ring-4 ring-primary/30 transition-all shadow-lg inline-flex items-center justify-center gap-2"
+              disabled={submitting}
+              className="w-full bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-bold uppercase tracking-widest hover:ring-4 ring-primary/30 transition-all shadow-lg inline-flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:ring-0"
             >
               <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-              Send Enquiry
+              {submitting ? "Sending…" : "Send Enquiry"}
             </button>
           </form>
 
