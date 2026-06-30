@@ -50,7 +50,7 @@ const treats = [
   },
   {
     name: "Hot Desserts",
-    desc: "Warm cookie dough topped with soft serve",
+    desc: "Warm waffles, brownies & cookie dough, topped with soft serve",
     img: treatHotDough,
   },
 ];
@@ -266,7 +266,7 @@ function Index() {
 
       {/* Contact / Hire */}
       <section id="contact" className="px-6 py-24 bg-muted">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <span className="font-mono text-xs uppercase text-accent font-bold mb-4 block">
               Weddings, Festivals &amp; Events
@@ -287,11 +287,14 @@ function Index() {
               const name = String(data.get("name") || "").trim();
               const phone = String(data.get("phone") || "").trim();
               const email = String(data.get("email") || "").trim();
+              const eventDate = String(data.get("eventDate") || "").trim();
+              const guests = String(data.get("guests") || "").trim();
+              const location = String(data.get("location") || "").trim();
               const message = String(data.get("message") || "").trim();
               if (!name || !email || !message) return;
               const subject = encodeURIComponent(`Website enquiry from ${name}`);
               const body = encodeURIComponent(
-                `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\n\nMessage:\n${message}`,
+                `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nEvent Date: ${eventDate}\nNumber of Guests: ${guests}\nLocation: ${location}\n\nMessage:\n${message}`,
               );
               window.location.href = `mailto:savinosofticeream@gmail.com?subject=${subject}&body=${body}`;
             }}
@@ -325,18 +328,63 @@ function Index() {
                 />
               </div>
             </div>
-            <div>
-              <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                required
-                maxLength={255}
-                className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
-              />
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="email" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
+                  Email
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  maxLength={255}
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
+                />
+              </div>
+              <div>
+                <label htmlFor="eventDate" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
+                  Event Date
+                </label>
+                <input
+                  id="eventDate"
+                  name="eventDate"
+                  type="date"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
+                />
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label htmlFor="guests" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
+                  Number of Guests
+                </label>
+                <select
+                  id="guests"
+                  name="guests"
+                  defaultValue=""
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
+                >
+                  <option value="" disabled>Select an option</option>
+                  <option value="1-25">1 – 25</option>
+                  <option value="26-50">26 – 50</option>
+                  <option value="51-100">51 – 100</option>
+                  <option value="100+">100+</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="location" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
+                  Event Location
+                </label>
+                <input
+                  id="location"
+                  name="location"
+                  type="text"
+                  maxLength={200}
+                  placeholder="Venue or address"
+                  className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition"
+                />
+              </div>
             </div>
             <div>
               <label htmlFor="message" className="block font-mono text-[10px] uppercase tracking-widest text-secondary mb-2">
@@ -348,14 +396,16 @@ function Index() {
                 required
                 maxLength={1000}
                 rows={5}
+                placeholder="Tell us about your event..."
                 className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition resize-none"
               />
             </div>
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-bold uppercase tracking-widest hover:ring-4 ring-primary/30 transition-all shadow-lg"
+              className="w-full bg-primary text-primary-foreground px-10 py-4 rounded-2xl font-bold uppercase tracking-widest hover:ring-4 ring-primary/30 transition-all shadow-lg inline-flex items-center justify-center gap-2"
             >
-              Send Message
+              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Enquiry
             </button>
           </form>
 
@@ -382,7 +432,7 @@ function Index() {
               </div>
               <div className="min-w-0">
                 <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Email</p>
-                <p className="text-sm font-semibold text-secondary truncate">savinosofticeream@gmail.com</p>
+                <p className="text-sm font-semibold text-secondary break-all">savinosofticeream@gmail.com</p>
               </div>
             </a>
             <div className="flex items-start gap-4 rounded-2xl border border-border bg-background p-6">
