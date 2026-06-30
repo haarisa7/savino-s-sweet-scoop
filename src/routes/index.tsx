@@ -5,6 +5,7 @@ import treatWaffle from "@/assets/treat-waffle.jpg";
 import treatSundae from "@/assets/treat-sundae.jpg";
 import treatMilkshake from "@/assets/treat-milkshake.jpg";
 import treatHotDough from "@/assets/treat-hot-dough.jpg";
+import treatSlush from "@/assets/treat-slush.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
