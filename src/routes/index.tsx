@@ -54,6 +54,11 @@ const treats = [
     desc: "Warm cookie dough topped with soft serve",
     img: treatHotDough,
   },
+  {
+    name: "Slush Puppy",
+    desc: "Iced blue & red slush — sweet, sharp & refreshing",
+    img: treatSlush,
+  },
 ];
 
 function Index() {
