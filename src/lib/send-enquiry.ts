@@ -54,7 +54,7 @@ function renderEmailHtml(data: z.infer<typeof enquirySchema>) {
 }
 
 export const sendEnquiry = createServerFn({ method: "POST" })
-  .validator((data: unknown) => enquirySchema.parse(data))
+  .inputValidator((data: unknown) => enquirySchema.parse(data))
   .handler(async ({ data }) => {
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
