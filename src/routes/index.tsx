@@ -38,31 +38,37 @@ const treats = [
     name: "Classic Cone",
     desc: "Proper Mr Whippy with a chocolate flake",
     img: treatCone,
+    href: null,
   },
   {
     name: "Waffle Cone",
     desc: "Golden Belgian waffle with sprinkles & flake",
     img: treatWaffle,
+    href: null,
   },
   {
     name: "Boat Sundae",
     desc: "Soft serve swirls with sauce & toppings",
     img: treatSundae,
+    href: null,
   },
   {
     name: "Milkshakes",
     desc: "Thick & creamy — Oreo, Biscoff, Caramel & more",
     img: treatMilkshake,
+    href: "/menu/milkshakes" as const,
   },
   {
     name: "Hot Desserts",
     desc: "Warm waffles, brownies & cookie dough, topped with soft serve",
     img: treatHotDough,
+    href: null,
   },
   {
     name: "Slush Puppy",
     desc: "Iced blue & red slush — sweet, sharp & refreshing",
     img: treatSlush,
+    href: null,
   },
 ];
 
