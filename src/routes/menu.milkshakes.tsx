@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import caramel from "@/assets/shakes/shake-caramel.png.asset.json";
-import malt from "@/assets/shakes/shake-malt.png.asset.json";
-import mocha from "@/assets/shakes/shake-mocha.png.asset.json";
-import bubblegum from "@/assets/shakes/shake-bubblegum.png.asset.json";
-import banana from "@/assets/shakes/shake-banana.png.asset.json";
-import nutella from "@/assets/shakes/shake-nutella.png.asset.json";
-import oreo from "@/assets/shakes/shake-oreo.png.asset.json";
-import cookiesCream from "@/assets/shakes/shake-cookies-cream.png.asset.json";
+import caramel from "@/assets/shakes/shake-caramel.jpg";
+import malt from "@/assets/shakes/shake-malt.jpg";
+import mocha from "@/assets/shakes/shake-mocha.jpg";
+import bubblegum from "@/assets/shakes/shake-bubblegum.jpg";
+import banana from "@/assets/shakes/shake-banana.jpg";
+import nutella from "@/assets/shakes/shake-nutella.jpg";
+import oreo from "@/assets/shakes/shake-oreo.jpg";
+import cookiesCream from "@/assets/shakes/shake-cookies-cream.jpg";
 
 export const Route = createFileRoute("/menu/milkshakes")({
   head: () => ({
@@ -22,21 +22,21 @@ export const Route = createFileRoute("/menu/milkshakes")({
         property: "og:description",
         content: "Every shake on the menu — thick, creamy & hand-spun in the van.",
       },
-      { property: "og:image", content: oreo.url },
+      { property: "og:image", content: oreo },
     ],
   }),
   component: MilkshakesGallery,
 });
 
 const shakes = [
-  { name: "Salted Caramel", desc: "Toffee-rich with a swirl of golden caramel", img: caramel.url, tint: "from-amber-100 to-amber-50" },
-  { name: "Biscoff", desc: "Speculoos cookie butter blended smooth", img: malt.url, tint: "from-orange-100 to-amber-50" },
-  { name: "Nutella", desc: "Chocolate hazelnut, ribboned through the cup", img: nutella.url, tint: "from-stone-100 to-amber-50" },
-  { name: "Oreo Crush", desc: "Cookies & cream with real Oreo pieces", img: oreo.url, tint: "from-slate-200 to-slate-50" },
-  { name: "Cookies & Cream", desc: "Classic vanilla soft serve with cookie shards", img: cookiesCream.url, tint: "from-stone-100 to-neutral-50" },
-  { name: "Mocha", desc: "Espresso & chocolate — an afternoon pick-me-up", img: mocha.url, tint: "from-amber-100 to-stone-50" },
-  { name: "Banana", desc: "Sweet ripe banana, thick and creamy", img: banana.url, tint: "from-yellow-100 to-amber-50" },
-  { name: "Bubblegum", desc: "Blue raspberry bubblegum — a kids' favourite", img: bubblegum.url, tint: "from-sky-100 to-cyan-50" },
+  { name: "Salted Caramel", desc: "Toffee-rich with a swirl of golden caramel", img: caramel },
+  { name: "Biscoff", desc: "Speculoos cookie butter blended smooth", img: malt },
+  { name: "Nutella", desc: "Chocolate hazelnut, ribboned through the cup", img: nutella },
+  { name: "Oreo Crush", desc: "Cookies & cream with real Oreo pieces", img: oreo },
+  { name: "Cookies & Cream", desc: "Classic vanilla soft serve with cookie shards", img: cookiesCream },
+  { name: "Mocha", desc: "Espresso & chocolate — an afternoon pick-me-up", img: mocha },
+  { name: "Banana", desc: "Sweet ripe banana, thick and creamy", img: banana },
+  { name: "Bubblegum", desc: "Blue raspberry bubblegum — a kids' favourite", img: bubblegum },
 ];
 
 function MilkshakesGallery() {
@@ -82,12 +82,11 @@ function MilkshakesGallery() {
               className="group animate-reveal bg-background rounded-3xl overflow-hidden shadow-sm border border-border hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               style={{ animationDelay: `${i * 60}ms` }}
             >
-              <div className={`relative aspect-square bg-gradient-to-b ${s.tint} overflow-hidden`}>
-                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/5 to-transparent" />
+              <div className="relative aspect-square overflow-hidden">
                 <img
                   src={s.img}
                   alt={s.name + " milkshake"}
-                  className="absolute inset-0 w-full h-full object-contain p-4 md:p-6 group-hover:scale-105 transition-transform duration-500"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               </div>
