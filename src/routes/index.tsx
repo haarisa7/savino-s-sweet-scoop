@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import type React from "react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { sendEnquiry } from "@/lib/send-enquiry";
@@ -38,31 +39,37 @@ const treats = [
     name: "Classic Cone",
     desc: "Proper Mr Whippy with a chocolate flake",
     img: treatCone,
+    href: null,
   },
   {
     name: "Waffle Cone",
     desc: "Golden Belgian waffle with sprinkles & flake",
     img: treatWaffle,
+    href: null,
   },
   {
     name: "Boat Sundae",
     desc: "Soft serve swirls with sauce & toppings",
     img: treatSundae,
+    href: null,
   },
   {
     name: "Milkshakes",
     desc: "Thick & creamy — Oreo, Biscoff, Caramel & more",
     img: treatMilkshake,
+    href: "/menu/milkshakes" as const,
   },
   {
     name: "Hot Desserts",
     desc: "Warm waffles, brownies & cookie dough, topped with soft serve",
     img: treatHotDough,
+    href: null,
   },
   {
     name: "Slush Puppy",
     desc: "Iced blue & red slush — sweet, sharp & refreshing",
     img: treatSlush,
+    href: null,
   },
 ];
 
@@ -177,28 +184,40 @@ function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {treats.map((treat, i) => (
-              <div
-                key={treat.name}
-                className="group animate-reveal bg-secondary-foreground/5 border border-secondary-foreground/10 rounded-2xl overflow-hidden hover:bg-secondary-foreground/10 transition-colors"
-                style={{ animationDelay: `${300 + i * 100}ms` }}
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={treat.img}
-                    alt={treat.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                    width={1024}
-                    height={1024}
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-2xl uppercase mb-2 text-primary">{treat.name}</h3>
-                  <p className="text-sm text-secondary-foreground/70">{treat.desc}</p>
-                </div>
-              </div>
-            ))}
+            {treats.map((treat, i) => {
+              const Wrapper: React.ElementType = treat.href ? Link : "div";
+              const wrapperProps = treat.href ? { to: treat.href } : {};
+              return (
+                <Wrapper
+                  key={treat.name}
+                  {...wrapperProps}
+                  className={`group animate-reveal bg-secondary-foreground/5 border border-secondary-foreground/10 rounded-2xl overflow-hidden hover:bg-secondary-foreground/10 transition-colors ${treat.href ? "cursor-pointer block" : ""}`}
+                  style={{ animationDelay: `${300 + i * 100}ms` }}
+                >
+                  <div className="aspect-square overflow-hidden">
+                    <img
+                      src={treat.img}
+                      alt={treat.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      width={1024}
+                      height={1024}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-display text-2xl uppercase mb-2 text-primary">
+                      {treat.name}
+                      {treat.href && (
+                        <span className="ml-2 text-sm text-secondary-foreground/60 normal-case tracking-normal">
+                          View all →
+                        </span>
+                      )}
+                    </h3>
+                    <p className="text-sm text-secondary-foreground/70">{treat.desc}</p>
+                  </div>
+                </Wrapper>
+              );
+            })}
           </div>
         </div>
       </section>
