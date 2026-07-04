@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import waffleNutella from "@/assets/hot/waffle-nutella.jpg";
+import stickyToffee from "@/assets/hot/sticky-toffee-pudding.jpg";
 
 export const Route = createFileRoute("/menu/hot-desserts")({
   head: () => ({
