@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import waffleNutella from "@/assets/hot/waffle-nutella.jpg";
+import stickyToffee from "@/assets/hot/sticky-toffee-pudding.jpg";
 
 export const Route = createFileRoute("/menu/hot-desserts")({
   head: () => ({
@@ -26,6 +27,11 @@ const items = [
     name: "Nutella Waffle",
     desc: "Golden Belgian waffle smothered in warm Nutella, served with a swirl of soft serve",
     img: waffleNutella,
+  },
+  {
+    name: "Sticky Toffee Pudding",
+    desc: "Warm sponge pudding drenched in rich toffee sauce, paired with a swirl of vanilla soft serve",
+    img: stickyToffee,
   },
 ];
 
