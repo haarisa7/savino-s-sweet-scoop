@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import waffleNutella from "@/assets/hot/waffle-nutella.jpg";
 import stickyToffee from "@/assets/hot/sticky-toffee-pudding.jpg";
 import brownie from "@/assets/hot/brownie.jpg";
+import fudgeCake from "@/assets/hot/fudge-cake.jpg";
 
 export const Route = createFileRoute("/menu/hot-desserts")({
   head: () => ({
@@ -38,6 +39,11 @@ const items = [
     name: "Chocolate Brownie",
     desc: "Crispy-topped, fudgy-centred chocolate brownie loaded with chunks, served with a swirl of soft serve",
     img: brownie,
+  },
+  {
+    name: "Fudge Cake",
+    desc: "Rich warm chocolate fudge cake drenched in glossy dark chocolate sauce, topped with a swirl of soft serve",
+    img: fudgeCake,
   },
 ];
 
