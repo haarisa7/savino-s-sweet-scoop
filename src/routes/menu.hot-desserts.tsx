@@ -40,6 +40,11 @@ const items = [
     desc: "Crispy-topped, fudgy-centred chocolate brownie loaded with chunks, served with a swirl of soft serve",
     img: brownie,
   },
+  {
+    name: "Fudge Cake",
+    desc: "Rich warm chocolate fudge cake drenched in glossy dark chocolate sauce, topped with a swirl of soft serve",
+    img: fudgeCake,
+  },
 ];
 
 function HotDessertsGallery() {
