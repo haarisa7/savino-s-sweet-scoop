@@ -34,6 +34,11 @@ const items = [
     desc: "Warm sponge pudding drenched in rich toffee sauce, paired with a swirl of vanilla soft serve",
     img: stickyToffee,
   },
+  {
+    name: "Chocolate Brownie",
+    desc: "Crispy-topped, fudgy-centred chocolate brownie loaded with chunks, served with a swirl of soft serve",
+    img: brownie,
+  },
 ];
 
 function HotDessertsGallery() {
