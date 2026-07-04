@@ -63,7 +63,7 @@ const treats = [
     name: "Hot Desserts",
     desc: "Warm waffles, brownies & cookie dough, topped with soft serve",
     img: treatHotDough,
-    href: null,
+    href: "/menu/hot-desserts" as const,
   },
   {
     name: "Slush Puppy",
