@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as MenuMilkshakesRouteImport } from './routes/menu.milkshakes'
+import { Route as MenuHotDessertsRouteImport } from './routes/menu.hot-desserts'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +23,39 @@ const MenuMilkshakesRoute = MenuMilkshakesRouteImport.update({
   path: '/menu/milkshakes',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MenuHotDessertsRoute = MenuHotDessertsRouteImport.update({
+  id: '/menu/hot-desserts',
+  path: '/menu/hot-desserts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/menu/hot-desserts': typeof MenuHotDessertsRoute
   '/menu/milkshakes': typeof MenuMilkshakesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/menu/hot-desserts': typeof MenuHotDessertsRoute
   '/menu/milkshakes': typeof MenuMilkshakesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/menu/hot-desserts': typeof MenuHotDessertsRoute
   '/menu/milkshakes': typeof MenuMilkshakesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/menu/milkshakes'
+  fullPaths: '/' | '/menu/hot-desserts' | '/menu/milkshakes'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/menu/milkshakes'
-  id: '__root__' | '/' | '/menu/milkshakes'
+  to: '/' | '/menu/hot-desserts' | '/menu/milkshakes'
+  id: '__root__' | '/' | '/menu/hot-desserts' | '/menu/milkshakes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  MenuHotDessertsRoute: typeof MenuHotDessertsRoute
   MenuMilkshakesRoute: typeof MenuMilkshakesRoute
 }
 
@@ -65,11 +75,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MenuMilkshakesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/menu/hot-desserts': {
+      id: '/menu/hot-desserts'
+      path: '/menu/hot-desserts'
+      fullPath: '/menu/hot-desserts'
+      preLoaderRoute: typeof MenuHotDessertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  MenuHotDessertsRoute: MenuHotDessertsRoute,
   MenuMilkshakesRoute: MenuMilkshakesRoute,
 }
 export const routeTree = rootRouteImport
