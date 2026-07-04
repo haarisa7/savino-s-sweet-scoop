@@ -28,6 +28,11 @@ const items = [
     desc: "Golden Belgian waffle smothered in warm Nutella, served with a swirl of soft serve",
     img: waffleNutella,
   },
+  {
+    name: "Sticky Toffee Pudding",
+    desc: "Warm sponge pudding drenched in rich toffee sauce, paired with a swirl of vanilla soft serve",
+    img: stickyToffee,
+  },
 ];
 
 function HotDessertsGallery() {
