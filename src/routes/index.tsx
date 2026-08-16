@@ -549,7 +549,18 @@ function Index() {
 
 
       {/* Footer */}
-      <footer className="bg-foreground text-background py-20 px-6">
+      <footer className="relative bg-foreground text-background py-20 px-6">
+        <svg
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-12 left-0 h-12 w-full text-foreground"
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="currentColor"
+            d="M0 54C180 20 350 18 520 47C700 78 865 70 1030 35C1190 1 1325 12 1440 38V80H0V54Z"
+          />
+        </svg>
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <div className="font-display text-4xl uppercase mb-8">Savino&rsquo;s</div>

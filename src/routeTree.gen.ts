@@ -10,22 +10,22 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as MenuMilkshakesRouteImport } from './routes/menu.milkshakes'
 import { Route as MenuHotDessertsRouteImport } from './routes/menu.hot-desserts'
+import { Route as MenuMilkshakesRouteImport } from './routes/menu.milkshakes'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MenuMilkshakesRoute = MenuMilkshakesRouteImport.update({
-  id: '/menu/milkshakes',
-  path: '/menu/milkshakes',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const MenuHotDessertsRoute = MenuHotDessertsRouteImport.update({
   id: '/menu/hot-desserts',
   path: '/menu/hot-desserts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuMilkshakesRoute = MenuMilkshakesRouteImport.update({
+  id: '/menu/milkshakes',
+  path: '/menu/milkshakes',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -68,18 +68,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/menu/milkshakes': {
-      id: '/menu/milkshakes'
-      path: '/menu/milkshakes'
-      fullPath: '/menu/milkshakes'
-      preLoaderRoute: typeof MenuMilkshakesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/menu/hot-desserts': {
       id: '/menu/hot-desserts'
       path: '/menu/hot-desserts'
       fullPath: '/menu/hot-desserts'
       preLoaderRoute: typeof MenuHotDessertsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu/milkshakes': {
+      id: '/menu/milkshakes'
+      path: '/menu/milkshakes'
+      fullPath: '/menu/milkshakes'
+      preLoaderRoute: typeof MenuMilkshakesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

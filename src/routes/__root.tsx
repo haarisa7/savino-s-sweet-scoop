@@ -78,6 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        name: "google-site-verification",
+        content: "O1XELOM8hs4G0l5CO0kSIPV4nvXD-oD1nkcezNU1kIk",
+      },
       { title: "Savino's Soft Ice Cream" },
       { name: "description", content: "Northwest London's family ice cream van since 1999." },
       { property: "og:type", content: "website" },
