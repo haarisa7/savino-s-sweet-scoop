@@ -105,9 +105,13 @@ function Index() {
     <div className="min-h-screen font-body text-foreground selection:bg-primary selection:text-secondary">
       {/* Nav */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="font-display text-2xl tracking-tight text-secondary uppercase">
-          Savino&rsquo;s
-        </div>
+        <a href="#top" className="flex items-center">
+          <img
+            src={logoAsset.url}
+            alt="Savino's Soft Ice Creams logo"
+            className="h-14 md:h-20 w-auto mix-blend-multiply"
+          />
+        </a>
         <div className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest">
           <a href="#menu" className="hover:text-secondary transition-colors">Menu</a>
           <a href="#story" className="hover:text-secondary transition-colors">Our Story</a>
