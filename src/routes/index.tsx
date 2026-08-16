@@ -107,8 +107,14 @@ function Index() {
   return (
     <div className="min-h-screen font-body text-foreground selection:bg-primary selection:text-secondary">
       {/* Nav */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
-        <a href="#top" className="flex items-center gap-3">
+      <nav className="sticky top-0 z-50 grid grid-cols-[1fr_auto_1fr] items-center px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest justify-self-start">
+          <a href="#menu" className="hover:text-secondary transition-colors">Menu</a>
+          <a href="#story" className="hover:text-secondary transition-colors">Our Story</a>
+          <a href="#reviews" className="hover:text-secondary transition-colors">Reviews</a>
+          <a href="#contact" className="hover:text-secondary transition-colors">Hire Us</a>
+        </div>
+        <a href="#top" className="flex items-center gap-3 justify-self-center">
           <img
             src={coneMark}
             alt="Savino's Soft Ice Creams cone mark"
@@ -119,20 +125,15 @@ function Index() {
             alt="Savino's"
             className="h-8 md:h-12 w-auto"
           />
-
         </a>
-        <div className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest">
-          <a href="#menu" className="hover:text-secondary transition-colors">Menu</a>
-          <a href="#story" className="hover:text-secondary transition-colors">Our Story</a>
-          <a href="#reviews" className="hover:text-secondary transition-colors">Reviews</a>
-          <a href="#contact" className="hover:text-secondary transition-colors">Hire Us</a>
+        <div className="flex justify-self-end">
+          <a
+            href="https://wa.me/447399841111"
+            className="bg-secondary text-secondary-foreground px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all"
+          >
+            Find the Van
+          </a>
         </div>
-        <a
-          href="https://wa.me/447399841111"
-          className="bg-secondary text-secondary-foreground px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all"
-        >
-          Find the Van
-        </a>
       </nav>
 
       {/* Hero */}
