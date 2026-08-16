@@ -7,6 +7,8 @@ import { GUEST_LABELS } from "@/lib/guest-labels";
 import { enquirySchema, type EnquiryFields } from "@/lib/enquiry-schema";
 import vanImage from "@/assets/van.png";
 import coneMark from "@/assets/savinos-cone-mark.png";
+import wordmark from "@/assets/savinos-wordmark.png";
+
 import treatCone from "@/assets/treat-cone.jpg";
 import treatWaffle from "@/assets/treat-waffle.jpg";
 import treatSundae from "@/assets/treat-sundae.jpg";
