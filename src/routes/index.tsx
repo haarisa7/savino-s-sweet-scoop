@@ -6,7 +6,7 @@ import { sendEnquiry } from "@/lib/send-enquiry";
 import { GUEST_LABELS } from "@/lib/guest-labels";
 import { enquirySchema, type EnquiryFields } from "@/lib/enquiry-schema";
 import vanImage from "@/assets/van.png";
-import logoAsset from "@/assets/savinos-logo.png.asset.json";
+import coneMark from "@/assets/savinos-cone-mark.png.asset.json";
 import treatCone from "@/assets/treat-cone.jpg";
 import treatWaffle from "@/assets/treat-waffle.jpg";
 import treatSundae from "@/assets/treat-sundae.jpg";
