@@ -6,7 +6,7 @@ import { sendEnquiry } from "@/lib/send-enquiry";
 import { GUEST_LABELS } from "@/lib/guest-labels";
 import { enquirySchema, type EnquiryFields } from "@/lib/enquiry-schema";
 import vanImage from "@/assets/van.png";
-import logoAsset from "@/assets/savinos-logo.png.asset.json";
+import coneMark from "@/assets/savinos-cone-mark.png.asset.json";
 import treatCone from "@/assets/treat-cone.jpg";
 import treatWaffle from "@/assets/treat-waffle.jpg";
 import treatSundae from "@/assets/treat-sundae.jpg";
@@ -106,12 +106,15 @@ function Index() {
     <div className="min-h-screen font-body text-foreground selection:bg-primary selection:text-secondary">
       {/* Nav */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
-        <a href="#top" className="flex items-center">
+        <a href="#top" className="flex items-center gap-3">
           <img
-            src={logoAsset.url}
-            alt="Savino's Soft Ice Creams logo"
-            className="h-20 md:h-28 w-auto"
+            src={coneMark.url}
+            alt="Savino's Soft Ice Creams cone mark"
+            className="h-12 md:h-16 w-auto"
           />
+          <span className="font-display text-2xl md:text-4xl leading-none tracking-tight text-foreground">
+            Savino's
+          </span>
         </a>
         <div className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest">
           <a href="#menu" className="hover:text-secondary transition-colors">Menu</a>
