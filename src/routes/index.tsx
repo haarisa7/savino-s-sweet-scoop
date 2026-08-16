@@ -6,7 +6,7 @@ import { sendEnquiry } from "@/lib/send-enquiry";
 import { GUEST_LABELS } from "@/lib/guest-labels";
 import { enquirySchema, type EnquiryFields } from "@/lib/enquiry-schema";
 import vanImage from "@/assets/van.png";
-import logoAsset from "@/assets/savinos-logo.jpg.asset.json";
+import logoAsset from "@/assets/savinos-logo.png.asset.json";
 import treatCone from "@/assets/treat-cone.jpg";
 import treatWaffle from "@/assets/treat-waffle.jpg";
 import treatSundae from "@/assets/treat-sundae.jpg";
@@ -110,7 +110,7 @@ function Index() {
           <img
             src={logoAsset.url}
             alt="Savino's Soft Ice Creams logo"
-            className="h-14 md:h-20 w-auto mix-blend-multiply"
+            className="h-20 md:h-28 w-auto"
           />
         </a>
         <div className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest">
