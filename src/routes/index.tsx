@@ -7,6 +7,8 @@ import { GUEST_LABELS } from "@/lib/guest-labels";
 import { enquirySchema, type EnquiryFields } from "@/lib/enquiry-schema";
 import vanImage from "@/assets/van.png";
 import coneMark from "@/assets/savinos-cone-mark.png";
+import wordmark from "@/assets/savinos-wordmark.png";
+
 import treatCone from "@/assets/treat-cone.jpg";
 import treatWaffle from "@/assets/treat-waffle.jpg";
 import treatSundae from "@/assets/treat-sundae.jpg";
@@ -112,9 +114,12 @@ function Index() {
             alt="Savino's Soft Ice Creams cone mark"
             className="h-12 md:h-16 w-auto"
           />
-          <span className="font-display text-2xl md:text-4xl leading-none tracking-tight text-secondary">
-            Savino's
-          </span>
+          <img
+            src={wordmark}
+            alt="Savino's"
+            className="h-8 md:h-12 w-auto"
+          />
+
         </a>
         <div className="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest">
           <a href="#menu" className="hover:text-secondary transition-colors">Menu</a>
