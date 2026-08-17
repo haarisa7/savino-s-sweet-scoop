@@ -3,10 +3,10 @@ import { n as require_jsx_runtime, r as require_react, t as QueryClientProvider 
 import { _ as createRootRouteWithContext, d as HeadContent, g as createFileRoute, h as lazyRouteComponent, m as Outlet, p as createRouter, u as Scripts, v as Link, y as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-xXRmj78h.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Cx4XZJHM.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-CRcIHi_C.css";
+var styles_default = "/assets/styles-B8Rexral.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -169,7 +169,7 @@ function RootComponent() {
 	});
 }
 var van_default = "/assets/van-BxYXJmK2.png";
-var $$splitComponentImporter$2 = () => import("./routes-BCGdkfmw.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-DXMSY3Ol.mjs");
 var Route$2 = createFileRoute("/")({
 	head: () => ({ meta: [
 		{ title: "Savino's Soft Ice Cream — Northwest London's Mr Whippy Van" },
@@ -193,7 +193,7 @@ var Route$2 = createFileRoute("/")({
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
 var waffle_nutella_default = "/assets/waffle-nutella-CYGJjKIW.jpg";
-var $$splitComponentImporter$1 = () => import("./menu.hot-desserts-CQsimoT6.mjs");
+var $$splitComponentImporter$1 = () => import("./menu.hot-desserts-BOvNbTwn.mjs");
 var Route$1 = createFileRoute("/menu/hot-desserts")({
 	head: () => ({ meta: [
 		{ title: "Hot Desserts — Savino's Soft Ice Cream" },
@@ -217,7 +217,7 @@ var Route$1 = createFileRoute("/menu/hot-desserts")({
 	component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
 var shake_oreo_default = "/assets/shake-oreo-C-tiVnOr.jpg";
-var $$splitComponentImporter = () => import("./menu.milkshakes-CXF-8pjh.mjs");
+var $$splitComponentImporter = () => import("./menu.milkshakes-CWzt-Fb9.mjs");
 var Route = createFileRoute("/menu/milkshakes")({
 	head: () => ({ meta: [
 		{ title: "Milkshakes — Savino's Soft Ice Cream" },

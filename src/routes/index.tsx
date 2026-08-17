@@ -108,7 +108,7 @@ function Index() {
     <div className="min-h-screen font-body text-foreground selection:bg-primary selection:text-secondary">
       {/* Nav */}
       <nav className="sticky top-0 z-50 flex items-center gap-8 px-6 md:px-10 py-4 bg-background/80 backdrop-blur-md border-b border-border">
-        <a href="#top" className="flex items-center gap-3 md:ml-16 lg:ml-28">
+        <a href="#top" className="flex items-center gap-0 md:ml-16 lg:ml-28">
           <img
             src={coneMark}
             alt="Savino's Soft Ice Creams cone mark"

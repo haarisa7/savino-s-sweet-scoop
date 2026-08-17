@@ -2,10 +2,10 @@ import { i as __toESM } from "./rolldown-runtime-D7D4PA-g.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { v as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { i as van_default } from "./router-xXRmj78h.mjs";
-import { i as getServerFnById, n as createServerFn, r as TSS_SERVER_FUNCTION } from "./server-Dm6_djgY.mjs";
+import { i as van_default } from "./router-Cx4XZJHM.mjs";
+import { i as getServerFnById, n as createServerFn, r as TSS_SERVER_FUNCTION } from "./server-Ba04l1px.mjs";
 import { n as enquirySchema, t as GUEST_LABELS } from "./enquiry-schema-BmC8LSgX.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BCGdkfmw.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DXMSY3Ol.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var createSsrRpc = (functionId) => {
@@ -95,7 +95,7 @@ function Index() {
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 						href: "#top",
-						className: "flex items-center gap-3 md:ml-16 lg:ml-28",
+						className: "flex items-center gap-0 md:ml-16 lg:ml-28",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: savinos_cone_mark_default,
 							alt: "Savino's Soft Ice Creams cone mark",

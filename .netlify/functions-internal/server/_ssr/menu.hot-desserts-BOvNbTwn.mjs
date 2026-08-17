@@ -1,7 +1,7 @@
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { v as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { r as waffle_nutella_default } from "./router-xXRmj78h.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/menu.hot-desserts-CQsimoT6.js
+import { r as waffle_nutella_default } from "./router-Cx4XZJHM.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/menu.hot-desserts-BOvNbTwn.js
 var import_jsx_runtime = require_jsx_runtime();
 var items = [
 	{
